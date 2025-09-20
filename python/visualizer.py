@@ -6,13 +6,11 @@ import binary_search_cpp
 arr = [3, 7, 12, 18, 23, 31, 42, 56, 67, 89]
 target = 42
 
-# Get steps from C++ binary search
+# Get steps from C++
 steps = binary_search_cpp.binary_search(arr, target)
-print("Steps:", steps)
 
 fig, ax = plt.subplots(figsize=(8, 4))
 bars = ax.bar(range(len(arr)), arr, color="lightblue")
-text_annotations = []
 
 def init():
     ax.set_ylim(0, max(arr) + 10)
@@ -31,10 +29,13 @@ def update(frame):
     bars[mid].set_color("orange" if not found else "red")
 
     ax.set_xlabel(f"Step {frame+1}: low={low}, mid={mid} (val={val}), high={high}, found={bool(found)}")
-
     return bars
 
-ani = animation.FuncAnimation(fig, update, frames=len(steps),
-                              init_func=init, blit=False, repeat=False)
+# ---------------------------
+# Keep reference to the animation
+# ---------------------------
+anim = animation.FuncAnimation(fig, update, frames=len(steps),
+                               init_func=init, blit=False, repeat=False)
 
-plt.show()
+# Option 2: Save as GIF or MP4
+anim.save("binary_search_demo.gif", writer='pillow', fps=1)
