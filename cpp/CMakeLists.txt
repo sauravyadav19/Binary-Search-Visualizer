@@ -7,4 +7,4 @@ set(CMAKE_CXX_STANDARD 17)
 add_subdirectory(pybind11)
 
 # Create Python module
-pybind11_add_module(binary_search_cpp binary_search.cpp)
+pybind11_add_module(binary_search_cpp search.cpp)
