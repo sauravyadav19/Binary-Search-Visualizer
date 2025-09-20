@@ -1,0 +1,47 @@
+# =========================
+# Build artifacts (CMake)
+# =========================
+/build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+*.a
+*.so
+*.dll
+*.dylib
+*.exe
+
+# =========================
+# Python cache / bytecode
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# =========================
+# Virtual environments
+# =========================
+.venv/
+env/
+venv/
+
+# =========================
+# OS generated files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# IDE/editor configs
+# =========================
+.vscode/
+
+# =========================
+# Output files
+# =========================
+*.gif
+*.mp4
+*.png
+*.jpg
